@@ -16,15 +16,15 @@ function textSlides(pixels, img_width, img_height){
 
         var alphabet = " #,ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
 
-        var arr = [0,1,0,12,3,23,14,16,3,24,13,19,0,1,0,14,30,14,0,16,14,0,29,3,23,24,13,19,0,1,0,10,28,17,28,18,24,8,18,8,16,0,24,3,19,3,0,6,20,20,16,0,30,3,16,13,25,13,30,20,23,0,1];
+        var arr = [0,1,0,12,3,23,14,16,3,24,13,19,0,1,0,14,30,14,0,16,14,0,29,3,23,24,13,19,0,1,0,10,28,17,28,18,24,8,18,8,16,0,24,3,19,3,0,6,20,20,16,0,30,3,16,13,25,13,30,20,23,0,1,1,0,14,17,16,19,27,23,0,1,1,0];
 
         var m="";
-      //  var aa = "" ;
-      //  for(var i=0;i<m.length;i++){
-      //      console.log(alphabet.indexOf(m.charAt(i)),m.charAt(i));
-      //      aa += alphabet.indexOf(m.charAt(i))+",";
-      //  }
-      //  console.log(aa);
+       // var aa = "" ;
+       // for(var i=0;i<m.length;i++){
+       //     console.log(alphabet.indexOf(m.charAt(i)),m.charAt(i));
+       //     aa += alphabet.indexOf(m.charAt(i))+",";
+       // }
+       // console.log(aa);
         
         var msg=m.toUpperCase();
         var nLetter = arr.length;
@@ -45,7 +45,7 @@ function textSlides(pixels, img_width, img_height){
                 letter = charMap[alphabet.charAt(arr[let_ind])]; 
                 for(var i=0;i<LETTER_HEIGHT;i++){
                     if(nLetter> let_ind && LETTER_WIDTH > let_ind_x && letter[i][let_ind_x] == 1){
-                        ctx.fillStyle = 'rgb(156, 27, 179)';
+                        ctx.fillStyle = arr[let_ind]==1? 'rgb(254, 37, 49)' : 'rgb(176, 57, 149)';
                     } else{
                         ctx.fillStyle = 'rgb(255,255,255)';
                     }
@@ -103,8 +103,8 @@ var charMap =[];
 charMap["#"] =[
 	[0,0,0,0,0],
 	[0,0,0,0,0],
-    [0,0,1,0,0],
-    [0,1,1,1,0],
+    [0,0,0,0,0],
+    [0,1,0,1,0],
     [1,1,1,1,1],
     [1,1,1,1,1],
     [0,1,1,1,0],
